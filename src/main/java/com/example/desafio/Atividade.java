@@ -1,12 +1,13 @@
 package com.example.desafio;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_atividade")
 public class Atividade {
-
+    @Id
     private Integer id;
     private String nome;
     private String descricao;

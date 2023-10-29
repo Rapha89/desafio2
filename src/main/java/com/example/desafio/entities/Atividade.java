@@ -2,7 +2,9 @@ package com.example.desafio.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -23,6 +25,9 @@ public class Atividade {
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
+
+    @OneToMany(mappedBy = "atividade")
+    List<Bloco> blocos = new ArrayList<>();
     public Atividade() {
     }
 
@@ -67,5 +72,13 @@ public class Atividade {
 
     public Set<Participante> getParticipantes() {
         return participantes;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public List<Bloco> getBlocos() {
+        return blocos;
     }
 }

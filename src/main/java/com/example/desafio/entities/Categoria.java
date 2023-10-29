@@ -2,6 +2,9 @@ package com.example.desafio.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "tb_categoria")
 public class Categoria {
@@ -9,6 +12,9 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String descricao;
+
+    @OneToMany(mappedBy = "categoria")
+    List<Atividade> atividades = new ArrayList<>();
 
     public Categoria() {
     }

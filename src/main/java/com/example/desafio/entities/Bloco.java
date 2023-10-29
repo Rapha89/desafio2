@@ -1,15 +1,13 @@
-package com.example.desafio;
+package com.example.desafio.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.Instant;
 @Entity
 @Table(name = "tb_bloco")
 public class Bloco {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant inicio;

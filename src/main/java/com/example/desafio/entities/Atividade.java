@@ -64,4 +64,8 @@ public class Atividade {
     public void setPreco(Double preco) {
         this.preco = preco;
     }
+
+    public Set<Participante> getParticipantes() {
+        return participantes;
+    }
 }

@@ -48,4 +48,8 @@ public class Participante {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Set<Atividade> getAtividades() {
+        return atividades;
+    }
 }
